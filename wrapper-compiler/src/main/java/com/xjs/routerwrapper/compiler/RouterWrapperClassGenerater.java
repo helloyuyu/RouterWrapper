@@ -311,11 +311,13 @@ public class RouterWrapperClassGenerater {
                 .build();
     }
 
+
     private CodeBlock.Builder createClassJavaDoc(TypeElement typeElement) {
         Route route = typeElement.getAnnotation(Route.class);
         String routeDesc = route.name();
         String classJavaDoc = elementUtils.getDocComment(typeElement);
-        return CodeBlock.builder().add("路由描述: $N\n\n$N\n", routeDesc, classJavaDoc);
+        String linkDoc = String.format("{@link %1$s}", typeElement.getQualifiedName().toString());
+        return CodeBlock.builder().add("路由描述: $N\n\n$N\n$N\n", routeDesc, classJavaDoc, linkDoc);
     }
 
     /**
