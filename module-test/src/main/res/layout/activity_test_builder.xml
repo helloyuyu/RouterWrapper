@@ -5,6 +5,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.xjs.routerwrapper.demo.ui.TestBuilderActivity">
+    tools:context="com.helloyuyu.routerwrapper.demo.ui.TestBuilderActivity">
 
 </android.support.constraint.ConstraintLayout>
