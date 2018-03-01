@@ -59,7 +59,7 @@ public class RouterWrapperClassGenerater {
     private Elements elementUtils;
     private TypeTransformer typeTransformer;
     private Map<TypeElement, List<Element>> elementListMap;
-    private static final String ROUTER_WRAPPER_NAME = "RouterServer";
+    private static final String ROUTER_WRAPPER_NAME = "Navigator";
 
     public RouterWrapperClassGenerater(String outputPackage, Types typeUtils, Logger logger, TypeTransformer typeTransformer, @NonNull Map<TypeElement, List<Element>> elementListMap, Elements elementUtils) {
         this.outputPackage = outputPackage;
