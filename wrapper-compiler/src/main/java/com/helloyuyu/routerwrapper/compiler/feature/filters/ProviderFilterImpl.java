@@ -10,9 +10,9 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Types;
 
 /**
+ * 跳过实现 IProvider的类
  * @author xjs
- *         on 2018/1/18
- *         desc:
+ * @date 2018/1/18
  */
 
 public class ProviderFilterImpl implements IRouteAnnotationFilter {

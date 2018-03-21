@@ -32,7 +32,7 @@ import javax.lang.model.element.PackageElement;
 import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Types;
 
-import static com.helloyuyu.routerwrapper.compiler.Constants.GENERATE_CLASS_NAME_PREFIX;
+import static com.helloyuyu.routerwrapper.compiler.Constants.BUILDER_CLASS_NAME_PREFIX;
 
 /**
  * @author xjs
@@ -266,7 +266,7 @@ public class BuilderClassFactory {
 
 
     private static String getClassName(TypeElement element) {
-        return GENERATE_CLASS_NAME_PREFIX + element.getSimpleName();
+        return BUILDER_CLASS_NAME_PREFIX + element.getSimpleName();
     }
 
     private static String getClassElementPackageName(TypeElement classElement) {

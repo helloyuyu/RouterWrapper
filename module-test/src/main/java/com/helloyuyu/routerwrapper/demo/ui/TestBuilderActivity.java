@@ -8,6 +8,7 @@ import com.alibaba.android.arouter.facade.annotation.Route;
 import com.helloyuyu.routerwrapper.demo.R;
 import com.helloyuyu.routerwrapper.demo.model.ARouter;
 import com.helloyuyu.routerwrapper.demo.model.TestBean;
+import com.xjs.routerwrapper.demo.route.Navigator;
 
 /**
  * @author xjs
@@ -34,5 +35,6 @@ public class TestBuilderActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_builder);
+        Navigator.testJavaDocActivity("message",new TestBean(),456).navigation();
     }
 }

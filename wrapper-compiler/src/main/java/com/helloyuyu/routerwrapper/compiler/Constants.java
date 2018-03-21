@@ -21,5 +21,5 @@ public class Constants {
     public static final String ROUTE_BUILDER_WRAPPER_CLASS_NAME = "com.xjs.com.xjs.wrapper.RouteBuilderWrapper";
     public static final String ATOUTER_IPROVIDER_CLASS_NAME = "com.alibaba.android.arouter.facade.template.IProvider";
 
-    public static final String GENERATE_CLASS_NAME_PREFIX = "Builder_";
+    public static final String BUILDER_CLASS_NAME_PREFIX = "Builder_";
 }

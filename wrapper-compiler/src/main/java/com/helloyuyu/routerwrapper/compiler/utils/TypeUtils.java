@@ -28,7 +28,6 @@ public class TypeUtils {
      * @return ；
      */
     public static boolean recursionIsImplements(TypeElement classElement, TypeName impsInterface, Types typeUtils) {
-        //包括但不限于 object
         if (classElement.asType().getKind() == TypeKind.NONE) {
             return false;
         }

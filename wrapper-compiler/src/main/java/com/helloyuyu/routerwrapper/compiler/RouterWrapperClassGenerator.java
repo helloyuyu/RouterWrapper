@@ -41,16 +41,17 @@ import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 
 import static com.helloyuyu.routerwrapper.compiler.Constants.FACADE_PACKAGE;
-import static com.helloyuyu.routerwrapper.compiler.Constants.GENERATE_CLASS_NAME_PREFIX;
+import static com.helloyuyu.routerwrapper.compiler.Constants.BUILDER_CLASS_NAME_PREFIX;
 import static com.helloyuyu.routerwrapper.compiler.Constants.POSTCARD_SIMPLE_CLASS_NAME;
 
 /**
+ * 构建文件输出
+ *
  * @author xjs
- *         on  2018/1/13
- *         desc: 生成模块的所有路由界面RouterServer文件 和 被Route注解的Fragment的静态调用的文件
+ * @date 2018/1/13
  */
 
-public class RouterWrapperClassGenerater {
+public class RouterWrapperClassGenerator {
 
     private Logger logger;
     private Types typeUtils;
@@ -60,7 +61,7 @@ public class RouterWrapperClassGenerater {
     private Map<TypeElement, List<Element>> elementListMap;
     private static final String ROUTER_WRAPPER_NAME = "Navigator";
 
-    public RouterWrapperClassGenerater(String outputPackage, Types typeUtils, Logger logger, TypeTransformer typeTransformer, @NonNull Map<TypeElement, List<Element>> elementListMap, Elements elementUtils) {
+    public RouterWrapperClassGenerator(String outputPackage, Types typeUtils, Logger logger, TypeTransformer typeTransformer, @NonNull Map<TypeElement, List<Element>> elementListMap, Elements elementUtils) {
         this.outputPackage = outputPackage;
         this.typeUtils = typeUtils;
         this.logger = logger;
@@ -130,7 +131,7 @@ public class RouterWrapperClassGenerater {
 
         //类名
         TypeSpec classTypeSpec = TypeSpec
-                .classBuilder(getClassName(classElement))
+                .classBuilder(BUILDER_CLASS_NAME_PREFIX + classElement.getSimpleName())
                 .addModifiers(Modifier.PUBLIC)
                 .addMethods(builderMethod)
                 .addMethod(constructor)
@@ -377,9 +378,6 @@ public class RouterWrapperClassGenerater {
         }
     }
 
-    private static String getClassName(TypeElement element) {
-        return GENERATE_CLASS_NAME_PREFIX + element.getSimpleName();
-    }
 
     private static String getClassElementPackageName(TypeElement classElement) {
         return ((PackageElement) classElement.getEnclosingElement()).getQualifiedName().toString();

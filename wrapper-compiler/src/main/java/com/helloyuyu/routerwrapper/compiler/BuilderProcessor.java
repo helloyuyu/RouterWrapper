@@ -63,7 +63,7 @@ public class BuilderProcessor extends AbstractProcessor {
             message.append("    }\n");
             message.append("}");
             logger.error(message);
-            throw new RuntimeException("Annotation:Compiler No optionsOutputPackageName option, for more information, look at gradle log.");
+            throw new RuntimeException("Annotation:Compiler miss 'optionsOutputPackageName' option, for more information, look at gradle log.");
         }
         outputPackageName = options.get(SUPPORT_OPTION_OUTPUT_PACKAGE_NAME);
         if (!RegexUtils.isPackageName(outputPackageName)) {
@@ -91,13 +91,6 @@ public class BuilderProcessor extends AbstractProcessor {
         return optionsSet;
     }
 
-    /**
-     * 在这方法中处理
-     *
-     * @param annotations ;
-     * @param roundEnv    ;
-     * @return .
-     */
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
 
@@ -105,7 +98,6 @@ public class BuilderProcessor extends AbstractProcessor {
         Set<? extends Element> elements = roundEnv.getElementsAnnotatedWith(Route.class);
 
         Map<TypeElement, List<Element>> elementListMap = findFiledAndIntegration(elements);
-        //过滤第二轮创建
         if (!elementListMap.isEmpty()) {
             try {
                 generate(elementListMap);
@@ -144,7 +136,7 @@ public class BuilderProcessor extends AbstractProcessor {
 
     private void generate(Map<TypeElement, List<Element>> elementListMap) throws IOException {
         logger.info("class size:" + elementListMap.size());
-        new RouterWrapperClassGenerater(outputPackageName, typeUtils, logger, TypeTransformer.create(logger, typeUtils, elementUtils), elementListMap, elementUtils)
+        new RouterWrapperClassGenerator(outputPackageName, typeUtils, logger, TypeTransformer.create(logger, typeUtils, elementUtils), elementListMap, elementUtils)
                 .write(filer);
     }
 
