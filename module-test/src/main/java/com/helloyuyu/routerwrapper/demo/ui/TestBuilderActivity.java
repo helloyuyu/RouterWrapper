@@ -21,20 +21,13 @@ public class TestBuilderActivity extends AppCompatActivity {
      */
     @Autowired(name = "message_string", desc = "消息", required = true)
     String message;
-    /**
-     * 年龄
-     */
-    @Autowired(name = "age_int", required = true)
-    int age;
-    @Autowired(required = true, desc = "测试bean", name = "arouter")
-    ARouter aRouter;
-    @Autowired(name = "test_bean", required = true)
+
+    @Autowired(name = "test_bean")
     TestBean testBean;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test_builder);
-        Navigator.testJavaDocActivity("message",new TestBean(),456).navigation();
     }
 }
