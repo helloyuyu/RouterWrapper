@@ -3,7 +3,7 @@
 <code>Navigator.class</code>\
 **用于模块内调用和对外的文档抽取**
 
-**最新版本 1.0.2**
+**最新版本 1.0.2**\
 ###引入
 **AndroidStudio**
 ```groovy
