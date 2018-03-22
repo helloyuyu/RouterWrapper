@@ -1,7 +1,9 @@
+
 **为集成ARouter模块生成所有的路由界面路由调用的同一入口**
 <code>Navigator.class</code>\
 **用于模块内调用和对外的文档抽取**
 
+**最新版本 1.0.2**
 ###引入
 **AndroidStudio**
 ```groovy
