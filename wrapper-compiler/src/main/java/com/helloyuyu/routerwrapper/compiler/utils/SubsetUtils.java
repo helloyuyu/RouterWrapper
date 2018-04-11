@@ -1,7 +1,10 @@
 package com.helloyuyu.routerwrapper.compiler.utils;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 /**
@@ -20,7 +23,7 @@ public class SubsetUtils {
      * @return ；
      */
     public static Set<int[]> recursionGetCombination(int start, int end) {
-        Set<int[]> result = new HashSet<>();
+        Set<int[]> result = new LinkedHashSet<>();
         if (start >= end) {
             result.add(new int[]{start});
             return result;
@@ -47,23 +50,24 @@ public class SubsetUtils {
         int[] result = new int[startInts.length + endInts.length];
         System.arraycopy(startInts, 0, result, 0, startInts.length);
         System.arraycopy(endInts, 0, result, startInts.length, endInts.length);
+        Arrays.sort(result);
         return result;
     }
 
 
-    public static ArrayList<ArrayList<Integer>> getSubsets2(ArrayList<Integer> set){
+    public static ArrayList<ArrayList<Integer>> getSubsets2(ArrayList<Integer> set) {
         ArrayList<ArrayList<Integer>> allsubsets = new ArrayList<ArrayList<Integer>>();
         //how many sub sets
         int max = 1 << set.size();
-        for(int i=0; i<max; i++){
+        for (int i = 0; i < max; i++) {
             int index = 0;
             int k = i;
             ArrayList<Integer> s = new ArrayList<Integer>();
-            while(k > 0){
-                if((k&1) > 0){
+            while (k > 0) {
+                if ((k & 1) > 0) {
                     s.add(set.get(index));
                 }
-                k>>=1;
+                k >>= 1;
                 index++;
             }
             allsubsets.add(s);

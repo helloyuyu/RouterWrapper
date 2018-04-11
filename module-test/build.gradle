@@ -35,6 +35,6 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation 'com.alibaba:arouter-api:1.3.1'
-    annotationProcessor 'com.helloyuyu:routerwrapper-compiler:1.0.0'
+    annotationProcessor project(":wrapper-compiler")
     annotationProcessor 'com.alibaba:arouter-compiler:1.1.4'
 }

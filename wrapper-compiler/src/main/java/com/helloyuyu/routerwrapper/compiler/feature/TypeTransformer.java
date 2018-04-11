@@ -71,9 +71,9 @@ public class TypeTransformer {
         typeTransformSet.add(new PrimitiveTypeTransformImpl());
         typeTransformSet.add(new BoxPrimitiveTypeTransformImp());
         typeTransformSet.add(new StringTypeTransformImpl());
-        typeTransformSet.add(new ArrayListTypeTransformImpl(typeUtils, elements));
-        typeTransformSet.add(new SerializableTypeTransformImpl(typeUtils));
         typeTransformSet.add(new ParcelableTypeTransformImpl(typeUtils));
-        typeTransformSet.add(new ArrayTypeTransformImpl(typeUtils));
+//        typeTransformSet.add(new ArrayListTypeTransformImpl(typeUtils, elements));
+//        typeTransformSet.add(new SerializableTypeTransformImpl(typeUtils));
+//        typeTransformSet.add(new ArrayTypeTransformImpl(typeUtils));
     }
 }
