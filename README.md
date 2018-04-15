@@ -4,7 +4,7 @@
 **用于模块内调用和对外的文档抽取**
 
 **最新版本 1.0.5**
-###引入
+##引入
 **AndroidStudio**
 ```groovy
 dependencies {
@@ -26,7 +26,7 @@ android {
     }
 }
 ```
-###使用
+##使用
 在RebuildProject后 调用Navigator 静态方法对应的Activity
 ```java
     Navigator.yourRouteActivity().navigation();
@@ -74,7 +74,7 @@ public class Navigator {
   public static Postcard testBuilderActivity1(String message, TestBean testBean) {
     return ARouter.getInstance().build("/test/test_route").withString("message_string",message).withObject("test_bean",testBean);}
 ```
-####联系作者
+##联系作者
 如有问题或其他方面请邮件\
 email : jsxie1024@163.com
 
