@@ -3,9 +3,7 @@
 <code>Navigator.class</code>\
 **用于模块内调用和对外的文档抽取**
 
-**最新版本 1.0.5**
-##引入
-**AndroidStudio**
+**AndroidStudio引入 最新：1.0.6**
 ```groovy
 dependencies {
     annotationProcessor 'com.helloyuyu:routerwrapper-compiler:xxx'
@@ -34,7 +32,7 @@ android {
 Navigator静态方法会返回对应Postcard
 
 **注意**\
-使用 @Autowired 注解注入的字段
+使用 @Autowired 注解注入的字段如果不是必须的会组合非必须的字段生成多个静态方法
 ```java
     /**
      * 消息
@@ -45,8 +43,7 @@ Navigator静态方法会返回对应Postcard
     @Autowired(name = "test_bean")
     TestBean testBean;
 ```
-如果不是必须的
-会组合非必须的字段生成多个静态方法
+
 ```java
 /**
  * 模块路由表 */
