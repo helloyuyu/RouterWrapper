@@ -29,6 +29,9 @@ import javax.lang.model.element.TypeElement;
 import javax.lang.model.util.Elements;
 import javax.lang.model.util.Types;
 
+/**
+ * @author xjs
+ */
 @AutoService(Processor.class)
 public class BuilderProcessor extends AbstractProcessor {
 

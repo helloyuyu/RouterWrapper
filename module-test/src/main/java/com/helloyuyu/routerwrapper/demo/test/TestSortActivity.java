@@ -5,6 +5,7 @@ import android.support.v7.app.AppCompatActivity;
 import com.alibaba.android.arouter.facade.annotation.Autowired;
 import com.alibaba.android.arouter.facade.annotation.Route;
 import com.helloyuyu.routerwrapper.demo.model.TestBean;
+import com.helloyuyu.routerwrapper.demo.model.TestParcelable;
 import com.xjs.routerwrapper.demo.route.Navigator;
 
 /**
@@ -20,21 +21,18 @@ import com.xjs.routerwrapper.demo.route.Navigator;
 @Route(path = "/test/test_sort")
 public class TestSortActivity extends AppCompatActivity {
     @Autowired(name = "show_message")
-    String   message;
-
-
+    String         message;
     @Autowired(name = "account_password")
-    Object   password;
-
+    Object         password;
     @Autowired(name = "test_bean_1")
-    TestBean testBean2;
+    TestBean       testBean2;
+    @Autowired(name = "parcelable_bean")
+    TestParcelable testParcelable;
 
     /**
      * @param message
      */
     public void setMessage(String message) {
         this.message = message;
-        Navigator.testSortActivity4(new Object(), new TestBean());
-        Navigator.testSortActivity7("", new Object(), new TestBean());
     }
 }

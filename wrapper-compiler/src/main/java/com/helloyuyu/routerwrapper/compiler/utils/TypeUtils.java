@@ -66,7 +66,7 @@ public class TypeUtils {
         return typeElement.getQualifiedName().toString().equals(type.getName());
     }
 
-    public static boolean isSubtype(TypeMirror subtypeMirror, CharSequence superTypeClassName, Types types, Elements elements) throws Exception {
+    public static boolean isSubtype(TypeMirror subtypeMirror, CharSequence superTypeClassName, Types types, Elements elements) {
         return types.isSubtype(subtypeMirror, elements.getTypeElement(superTypeClassName).asType());
     }
 

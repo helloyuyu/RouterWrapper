@@ -6,29 +6,36 @@ import javax.tools.Diagnostic;
 
 /**
  * @author xjs
- *         on  2018/1/13
- *         desc:
+ * on  2018/1/13
+ * desc:
  */
 
 public class Logger {
 
     private Messager messager;
-    private static final String TAG = "Builder:";
+    private static final boolean DEBUG = false;
+    private static final String  TAG   = "Builder:";
 
     public Logger(Messager messager) {
         this.messager = messager;
     }
 
     public void info(CharSequence charSequence) {
-        messager.printMessage(Diagnostic.Kind.NOTE, TAG + charSequence);
+        if (DEBUG){
+            messager.printMessage(Diagnostic.Kind.NOTE, TAG + charSequence);
+        }
     }
 
     public void error(CharSequence charSequence) {
-        messager.printMessage(Diagnostic.Kind.ERROR, TAG + charSequence);
+        if (DEBUG){
+            messager.printMessage(Diagnostic.Kind.ERROR, TAG + charSequence);
+        }
     }
-    public void error(StackTraceElement[] stackTrace) {
-        messager.printMessage(Diagnostic.Kind.ERROR, TAG + formatStackTrace(stackTrace));
 
+    public void error(StackTraceElement[] stackTrace) {
+        if (DEBUG){
+            messager.printMessage(Diagnostic.Kind.ERROR, TAG + formatStackTrace(stackTrace));
+        }
     }
 
 

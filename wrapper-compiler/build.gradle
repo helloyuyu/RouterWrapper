@@ -14,7 +14,7 @@ publish {
     userOrg = 'helloyuyu'//bintray.com用户名
     groupId = 'com.helloyuyu'//jcenter上的路径
     artifactId = 'routerwrapper-compiler'//项目名称
-    publishVersion = '1.0.5'//版本号
+    publishVersion = '1.0.7'//版本号
     desc = 'APT for ARouter'//描述，不重要
     website = 'https://github.com/helloyuyu/RouterWrapper'//网站
     licences = ['Apache-2.0']
