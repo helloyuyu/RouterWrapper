@@ -53,11 +53,11 @@ import static com.helloyuyu.routerwrapper.compiler.Constants.POSTCARD_SIMPLE_CLA
 
 public class RouterWrapperClassGenerator {
 
-    private Logger logger;
-    private Types typeUtils;
-    private String outputPackage;
-    private Elements elementUtils;
-    private TypeTransformer typeTransformer;
+    private Logger                          logger;
+    private Types                           typeUtils;
+    private String                          outputPackage;
+    private Elements                        elementUtils;
+    private TypeTransformer                 typeTransformer;
     private Map<TypeElement, List<Element>> elementListMap;
     private static final String ROUTER_WRAPPER_NAME = "Navigator";
 
@@ -316,6 +316,9 @@ public class RouterWrapperClassGenerator {
         Route route = typeElement.getAnnotation(Route.class);
         String routeDesc = route.name();
         String classJavaDoc = elementUtils.getDocComment(typeElement);
+        if (classJavaDoc == null) {
+            classJavaDoc = "/***/";
+        }
         String linkDoc = String.format("{@link %1$s}", typeElement.getQualifiedName().toString());
         return CodeBlock.builder().add("路由描述: $N\n\n$N\n$N\n", routeDesc, classJavaDoc, linkDoc);
     }
