@@ -71,8 +71,10 @@ public class Navigator {
   public static Postcard testBuilderActivity1(String message, TestBean testBean) {
     return ARouter.getInstance().build("/test/test_route").withString("message_string",message).withObject("test_bean",testBean);}
 ```
+**导出文档**
+打开Navigator这个类
+Android Studio Tools->Generate JavaDoc
 
-Android Studio Tools->Generate JavaDoc  导出文档
 **联系作者**
 email : jsxie1024@163.com
 
